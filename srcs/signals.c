@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 16:02:58 by jshantay          #+#    #+#             */
-/*   Updated: 2021/10/29 21:36:17 by jshantay         ###   ########.fr       */#.fr       */
+/*   Updated: 2021/10/29 21:37:06 by jshantay         ###   ########.fr       */#.fr       */
 =======
 /*   Updated: 2021/10/29 21:27:43 by jshantay         ###   ########.fr       */
 >>>>>>> origin/main
