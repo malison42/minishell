@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 14:26:01 by jshantay          #+#    #+#             */
-/*   Updated: 2021/10/29 14:29:40 by jshantay         ###   ########.fr       */
+/*   Updated: 2021/10/29 16:02:50 by jshantay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	err_msg(char *err)
 
 void	read_line(char **line, t_list *env)
 {
+	signal(SIGINT, ft_handler);
+	signal(SIGQUIT, SIG_IGN);
 	*line = readline("\033[32mminishell$ \033[90m\033[0m");
 	if (*line == NULL)
 	{

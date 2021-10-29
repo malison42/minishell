@@ -22,7 +22,7 @@ HEADERS_LIST = minishell.h
 HEADERS_DIRECTORY = ./inc/
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
-INCLUDES = -I$(HEADERS_DIRECTORY) -I$(LIBFT_HEADERS) -I/usr/local/opt/readline/include/readline
+INCLUDES = -I$(HEADERS_DIRECTORY) -I$(LIBFT_HEADERS) -I/usr/local/opt/readline/include/
 
 SOURCES_DIRECTORY = ./srcs/
 

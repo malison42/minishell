@@ -60,7 +60,7 @@ int		skip_quotes(char *str, int i);
 int		redir_syntax_err(char *str, int i);
 t_list	*cmd_parse(t_list *cmd, char *line, t_list *env);
 
-void	handle_signals(int sig);
+void	ft_handler(int signum);
 
 void	free_env(t_list *env);
 
