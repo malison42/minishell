@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 14:26:01 by jshantay          #+#    #+#             */
-/*   Updated: 2021/10/29 16:02:50 by jshantay         ###   ########.fr       */
+/*   Updated: 2021/11/08 15:35:24 by jshantay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,23 @@ void	loop(t_mshl *data)
 		tmp = data->env;
 		if (line != NULL && !parse(line))
 		{
-			cmd = cmd_parse(cmd, line, tmp);
+			cmd = get_cmd(cmd, line, tmp);
+			/*t_cmd *tmp = cmd->content;
+			printf("cmd = %s\n", tmp->args[0]);
+			printf("cmd = %s\n", tmp->args[1]);
+			cmd = cmd->next;
+			tmp = cmd->content;
+			printf("cmd = %s\n", tmp->args[0]);
+			t_list *red;
+			red = tmp->redir;
+			t_redir *redir;
+			redir = red->content;
+			printf("cmd = %c\n", redir->type);
+			cmd = cmd->next;
+			tmp = cmd->content;
+			printf("cmd = %s\n", tmp->args[0]);
+			printf("cmd = %s\n", tmp->args[1]);*/
+
 //			exec();
 		}
 		free(line);

@@ -26,7 +26,8 @@ INCLUDES = -I$(HEADERS_DIRECTORY) -I$(LIBFT_HEADERS) -I/usr/local/opt/readline/i
 
 SOURCES_DIRECTORY = ./srcs/
 
-SOURCES_LIST =	main.c signals.c parse.c parse_utils.c get_env.c free.c utils.c cmd_parse.c
+SOURCES_LIST =	main.c signals.c parse.c parse_utils.c get_env.c free.c utils.c cmd.c \
+				cmd_args.c redir_filepath.c utils_1.c utils_2.c utils_3.c
 
 OBJECTS_DIRECTORY = ./objs/
 

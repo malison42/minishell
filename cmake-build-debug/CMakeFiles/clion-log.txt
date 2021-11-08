@@ -1,0 +1,1 @@
+CMakeLists.txt not found in /Users/migalnikita/Documents/School21/minishell Select CMakeLists.txt

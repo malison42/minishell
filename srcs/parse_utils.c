@@ -1,6 +1,21 @@
 
 #include "../inc/minishell.h"
 
+int	skip_space_and_redir(char *s, int i)
+{
+	while (s[i] == ' ')
+		i++;
+	while (s[i] == '>' || s[i] == '<')
+	{
+		i++;
+		while (s[i] == ' ')
+			i++;
+		while (s[i] && s[i] != ' ' && s[i] != '<' && s[i] != '>')
+			i++;
+	}
+	return (i);
+}
+
 int	check_for_quote(char c, int quote)
 {
 	if (c == '"' && quote == 0)

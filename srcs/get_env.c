@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 14:48:44 by jshantay          #+#    #+#             */
-/*   Updated: 2021/10/29 21:37:06 by jshantay         ###   ########.fr       */
+/*   Updated: 2021/11/08 11:22:27 by jshantay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_env	*new_node(char *key, char *value)
 		return (NULL);
 	new->key = ft_strdup(key);
 	new->value = ft_strdup(value);
+	new->flag = 1;
 	return (new);
 }
 
