@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 11:46:12 by jshantay          #+#    #+#             */
-/*   Updated: 2021/11/15 16:06:32 by jshantay         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:03:20 by jshantay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,12 @@ int	*create_pipes(int nbr_pipes)
 {
 	int	*fd;
 	int	i;
-	int	j;
 
 	fd = malloc(2 * nbr_pipes * sizeof(int));
 	i = 0;
 	while (i < nbr_pipes)
 	{
-		j = pipe(fd + 2 * i);
-		if (j < 0)
+		if (pipe(fd + 2 * i) < 0)
 		{
 			perror("pipe: ");
 			exit(0);

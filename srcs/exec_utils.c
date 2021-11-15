@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:37:52 by jshantay          #+#    #+#             */
-/*   Updated: 2021/11/15 15:37:52 by jshantay         ###   ########.fr       */
+/*   Updated: 2021/11/15 17:32:37 by jshantay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static char	*ft_local_cmd(char *str, char *cmd)
 	int	j;
 
 	j = open(str, O_RDONLY);
-	if (j != -1 && j != 13)
+	if (j != -1)
 		return (str);
 	ft_putstr_fd(cmd, 2);
 	ft_putstr_fd(": command not found\n", 2);
@@ -90,7 +90,7 @@ char	*get_cmd_path(char *cmd, char **paths)
 		{
 			str = ft_strjoin(paths[i], cmd);
 			j = open(str, O_RDONLY);
-			if (j != -1 && j != 13)
+			if (j != -1)
 				return (str);
 			free(str);
 			i++;

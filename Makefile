@@ -2,7 +2,7 @@ NAME = minishell
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra -O2 -ggdb3
+CFLAGS = -Wall -Werror -Wextra -ggdb3
 
 COMPILE = $(CC) $(CFLAGS)
 
