@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:39:15 by jshantay          #+#    #+#             */
-/*   Updated: 2021/11/08 16:33:03 by jshantay         ###   ########.fr       */
+/*   Updated: 2021/11/15 11:37:54 by jshantay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void	get_arg(t_cmd *new, char *s, t_list *env, t_prs *prs)
 		prs->outside_quote = 0;
 	}
 	if (s[prs->i] == '"' || s[prs->i] == '\'')
-		get_dbl_sgl_quotes(new, s, env, prs);
+		get_dbl_quotes(new, s, env, prs);
 	if (!s[prs->i] || s[prs->i] == ' ' || s[prs->i] == '>' || s[prs->i] == '<')
 		is_arg_empty(new, s, prs, j);
 }

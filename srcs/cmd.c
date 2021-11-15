@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:27:43 by jshantay          #+#    #+#             */
-/*   Updated: 2021/11/08 16:33:03 by jshantay         ###   ########.fr       */
+/*   Updated: 2021/11/15 17:10:08 by jshantay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,7 @@ void	free_cmd(char **cmds, char **line)
 			free(cmds[i++]);
 		free(cmds);
 	}
-	cmds = NULL;
 	free(line);
-	line = NULL;
 }
 
 void	cmd_parse(t_cmd *new, char *s, t_list *env, t_prs *prs)
@@ -95,7 +93,7 @@ t_cmd	*new_cmd(char *s, t_list *env)
 	return (new);
 }
 
-t_list	*get_cmd(t_list *cmd, char *line, t_list *env)
+t_list	*get_cmd(char *line, t_list *env)
 {
 	/*
 	 * получаем команды и парсим их на сами команды
@@ -103,10 +101,12 @@ t_list	*get_cmd(t_list *cmd, char *line, t_list *env)
 	 */
 	char	**cmds;
 	t_cmd	*tmp;
+	t_list 	*cmd;
 	t_list	*new;
 	int		i;
 
 	i = 0;
+	cmd = NULL;
 	cmds = ft_split(refactor_pipe(line), -1);
 	if (!cmds)
 	{

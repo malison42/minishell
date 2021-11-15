@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 23:35:48 by jshantay          #+#    #+#             */
-/*   Updated: 2021/11/08 16:33:03 by jshantay         ###   ########.fr       */
+/*   Updated: 2021/11/15 11:43:06 by jshantay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*remove_spaces(char *s)
 	return (res);
 }
 
-void	get_dbl_sgl_quotes(t_cmd *new, char *s, t_list *env_lst, t_prs *prs)
+void	get_dbl_quotes(t_cmd *new, char *s, t_list *env_lst, t_prs *prs)
 {
 	char	*temp;
 	char	*tmp;
@@ -95,4 +95,13 @@ char	*single_quotes(char *s, t_prs *prs)
 	file = ft_substr(s, j, prs->i - j);
 	prs->i++;
 	return (file);
+}
+
+void	ft_dup2(int fd1, int fd2)
+{
+	if (dup2(fd1, fd2) < 0)
+	{
+		perror("dup2");
+		exit(0);
+	}
 }

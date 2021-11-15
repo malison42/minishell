@@ -30,7 +30,7 @@ static void	var_edge_cases(char *s, t_prs *prs)
 	{
 		tmp = prs->tmp.res;
 		prs->tmp.i += 2;
-		prs->tmp.res = ft_strjoin(prs->tmp.res, temp = ft_itoa(48532));
+		prs->tmp.res = ft_strjoin(prs->tmp.res, temp = ft_itoa(99844));
 		free(temp);
 		free(tmp);
 	}

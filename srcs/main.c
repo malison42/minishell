@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 14:26:01 by jshantay          #+#    #+#             */
-/*   Updated: 2021/11/08 16:33:03 by jshantay         ###   ########.fr       */
+/*   Updated: 2021/11/15 17:03:10 by jshantay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	read_line(char **line, t_list *env)
 {
 	signal(SIGINT, ft_handler);
 	signal(SIGQUIT, SIG_IGN);
-	*line = readline("\033[32mminishell$ \033[90m\033[0m");
+	*line = readline("\001\033[1;92m\002minishell$ \001\033[0m\002");
 	if (*line == NULL)
 	{
 		ft_putstr_fd("exit\n", 1);
@@ -46,27 +46,11 @@ void	loop(t_mshl *data)
 		tmp = data->env;
 		if (line != NULL && !parse(line))
 		{
-			cmd = get_cmd(cmd, line, tmp);
-			/*t_cmd *tmp = cmd->content;
-			printf("cmd = %s\n", tmp->args[0]);
-			printf("cmd = %s\n", tmp->args[1]);
-			cmd = cmd->next;
-			tmp = cmd->content;
-			printf("cmd = %s\n", tmp->args[0]);
-			t_list *red;
-			red = tmp->redir;
-			t_redir *redir;
-			redir = red->content;
-			printf("cmd = %c\n", redir->type);
-			cmd = cmd->next;
-			tmp = cmd->content;
-			printf("cmd = %s\n", tmp->args[0]);
-			printf("cmd = %s\n", tmp->args[1]);*/
-
-//			exec();
+			cmd = get_cmd(line, tmp);
+			exec(cmd, data->env);
 		}
 		free(line);
-//		free_cmd(cmd);
+		free_cmd_list(cmd);
 	}
 }
 

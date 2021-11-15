@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 18:45:15 by jshantay          #+#    #+#             */
-/*   Updated: 2021/11/08 16:33:03 by jshantay         ###   ########.fr       */
+/*   Updated: 2021/11/15 17:08:57 by jshantay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int		skip_space_and_redir(char *s, int i);
 int		redir_syntax_err(char *str, int i);
 
 
-t_list	*get_cmd(t_list *cmd, char *line, t_list *env);
+t_list	*get_cmd(char *line, t_list *env);
 void	allocate_args(char *s, t_cmd *cmd, t_list *env);
 int		count_extra_args(char *s, int i, int j, t_list *env);
 char	*variable_expander(char *key, t_list *env);
@@ -107,7 +107,7 @@ char	*env_var_checker(char *s, t_list *env, t_prs *prs);
 char	*remove_spaces(char *s);
 char	*single_quotes(char *s, t_prs *prs);
 char	*double_quotes(char *s, t_list *env, t_prs *prs);
-void	get_dbl_sgl_quotes(t_cmd *new, char *s, t_list *env_lst, t_prs *prs);
+void	get_dbl_quotes(t_cmd *new, char *s, t_list *env_lst, t_prs *prs);
 char	*remove_spaces(char *s);
 char	*get_ambiguous_var(char *joined, char *var);
 int		find_end_of_var(char *s, int i);
@@ -116,9 +116,25 @@ void	init_prs_cmd(t_prs *prs);
 void	init_cmd(t_cmd *new, char *s, t_list *env);
 void	get_arg(t_cmd *new, char *s, t_list *env, t_prs *prs);
 
+void	exec(t_list *cmd, t_list *env);
+void	ft_dup2(int fd1, int fd2);
+void	wait_cmds(int cnt_cmd);
+void	close_fd(int *fd, int nbr);
+void	exec_cmd(t_list *cmds, int *fd, t_list *env, int i);
+char	**list_to_arr(t_list *lst);
+char	*get_cmd_path(char *cmd, char **paths);
+
+/*BUILTIN*/
+
+int		is_builtin(t_cmd *cmd);
+int		exec_builtin(t_cmd *cmd, t_list *envp, int status);
+
+/*BUILTIN*/
+
 void	ft_handler(int signum);
 
 void	free_env(t_list *env);
+void	free_cmd_list(t_list *cmd);
 
 int		err_msg(char *err);
 

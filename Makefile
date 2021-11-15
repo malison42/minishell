@@ -2,7 +2,7 @@ NAME = minishell
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra -O2 -g3
+CFLAGS = -Wall -Werror -Wextra -O2 -ggdb3
 
 COMPILE = $(CC) $(CFLAGS)
 
@@ -26,8 +26,9 @@ INCLUDES = -I$(HEADERS_DIRECTORY) -I$(LIBFT_HEADERS) -I/usr/local/opt/readline/i
 
 SOURCES_DIRECTORY = ./srcs/
 
-SOURCES_LIST =	main.c signals.c parse.c parse_utils.c get_env.c free.c utils.c cmd.c \
-				cmd_args.c redir_filepath.c utils_1.c utils_2.c utils_3.c
+SOURCES_LIST =	main.c signals.c parse.c parse_utils.c get_env.c free.c utils.c cmd.c 	\
+				cmd_args.c redir_filepath.c utils_1.c utils_2.c utils_3.c	exec.c		\
+				builtin_utils.c	exec_cmd.c	exec_utils.c	redir.c
 
 OBJECTS_DIRECTORY = ./objs/
 
