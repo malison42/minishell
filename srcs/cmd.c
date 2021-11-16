@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:27:43 by jshantay          #+#    #+#             */
-/*   Updated: 2021/11/15 17:32:37 by jshantay         ###   ########.fr       */
+/*   Updated: 2021/11/16 13:23:57 by jshantay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	*refactor_pipe(char *cmds)
 	return (tmp);
 }
 
-void	free_cmd(char **cmds, char **line)
+void	free_cmd(char **cmds)
 {
 	int	i;
 
@@ -49,7 +49,6 @@ void	free_cmd(char **cmds, char **line)
 			free(cmds[i++]);
 		free(cmds);
 	}
-	free(line);
 }
 
 void	cmd_parse(t_cmd *new, char *s, t_list *env, t_prs *prs)
@@ -120,6 +119,6 @@ t_list	*get_cmd(char *line, t_list *env)
 		ft_lstadd_back(&cmd, new);
 		i++;
 	}
-	free_cmd(cmds, &line);
+	free_cmd(cmds);
 	return (cmd);
 }

@@ -6,7 +6,7 @@
 /*   By: jshantay <jshantay@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:16:14 by jshantay          #+#    #+#             */
-/*   Updated: 2021/11/15 17:32:37 by jshantay         ###   ########.fr       */
+/*   Updated: 2021/11/16 13:25:45 by jshantay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	free_cmd_list(t_list *cmd)
 		cmd = cmd->next;
 		free(list_temp);
 	}
-	cmd = NULL;
 }
 
 void	free_env(t_list *env)
